@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chuck Norris Joke Generator</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Chuck Norris Joke Generator</h1>
+		<div class="joke">
+			<p id="joke-text"></p>
+			<button id="generate-btn">Generate Joke</button>
+		</div>
+	</div>
+    <div class="heart-btn">
+        <div class="content">
+          <span class="heart"></span>
+          <span class="text">Like</span>
+          <span class="numb"></span>
+        </div>
+      </div>
+     
+  
+      <script>
+        $(document).ready(function(){
+          $('.content').click(function(){
+            $('.content').toggleClass("heart-active")
+            $('.text').toggleClass("heart-active")
+            $('.numb').toggleClass("heart-active")
+            $('.heart').toggleClass("heart-active")
+          });
+        });
+      </script>
+
+	<script src="index.js"></script>
+</body>
+</html>

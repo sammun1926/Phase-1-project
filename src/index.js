@@ -6,12 +6,15 @@ const jokeText = document.getElementById('joke-text');
 generateButton.addEventListener('click', generateJoke);
 
 function generateJoke() {
+     // Fetches a random Chuck Norris joke from the API
+
 	fetch(apiURL)
 		.then(response => response.json())
 		.then(data => {
 			jokeText.textContent = data.value;
 		})
 		.catch(() => {
+             // Displays an error message if there's a problem with the API request
 			jokeText.textContent = 'An error occurred, please try again later.';
 		});
 }
@@ -20,10 +23,12 @@ let likeCounter = 0;
 const likeButton = document.querySelector('.heart-btn');
 
 likeButton.addEventListener('click', () => {
+     // Increases the like counter by 1 when the heart button is clicked
   likeCounter++;
   document.querySelector('.numb').textContent = likeCounter;
 });
 function generateJoke() {
+    // Resets the like counter and updates the display when a new joke is generated
 	likeCounter = 0;
 	document.querySelector('.numb').textContent = likeCounter;
 	fetch(apiURL)
@@ -35,6 +40,8 @@ function generateJoke() {
 			jokeText.textContent = 'An error occurred, please try again later.';
 		});
 }
+// JQuery code that adds functionality to the heart button
+
 $(document).ready(function(){
   let likes = 0;
   const content = $('.content');

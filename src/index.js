@@ -35,4 +35,26 @@ function generateJoke() {
 			jokeText.textContent = 'An error occurred, please try again later.';
 		});
 }
+$(document).ready(function(){
+  let likes = 0;
+  const content = $('.content');
+  const text = $('.text');
+  const numb = $('.numb');
+  const heart = $('.heart');
+
+   heart-active.click(function(){
+    content.toggleClass("heart-active");
+    text.toggleClass("heart-active");
+    numb.toggleClass("heart-active");
+    heart.toggleClass("heart-active");
+
+    if (content.hasClass('heart-active')) {
+      likes++;
+    } else {
+      likes = Math.max(likes - 1, 0);
+    }
+
+    numb.text(likes);
+  });
+});
 
